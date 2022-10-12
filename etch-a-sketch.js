@@ -63,4 +63,13 @@ function handleKey(e){
         draw ({ key: e.key})
     }
 }
+
+//clear canvas
+function clearCanvas(){
+    canvas.classList.add('shake');
+    canvas.addEventListener('animationend',function(){
+        canvas.classList.remove('shake');
+    },{once: true});
+}
 window.addEventListener('keydown', handleKey);
+shakebutton.addEventListener('click', clearCanvas);
